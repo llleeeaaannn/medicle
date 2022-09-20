@@ -4,7 +4,7 @@
 import './style.css';
 import { differenceInDays } from 'date-fns';
 import { keysArray, validLetters, colorKeys, darkStyle, darkContrastStyle, lightStyle, lightContrastStyle } from './variables.mjs';
-import { validAnswers, validTickers } from './tickers.mjs';
+import { validAnswers, validAbbreviations, abbreviationsObjects } from './abbreviations.mjs';
 
 export default class Game {
 
@@ -215,9 +215,9 @@ export default class Game {
       return;
     }
 
-    if (!(validTickers.includes(currentGuess)) && currentGuess !== this.wordle) {
+    if (!(validAbbreviations.includes(currentGuess)) && currentGuess !== this.wordle) {
       this.shake();
-      this.setPopUpMessage('Not a ticker');
+      this.setPopUpMessage('Not a valid answer');
       this.togglePopUp();
       return;
     }
@@ -227,7 +227,7 @@ export default class Game {
       this.setGameOver(true);
       this.disableHardModeCheckbox();
       this.updateStatsOnWin();
-      this.setPopUpMessage('HUZZAH');
+      this.setPopUpMessage('Well Done!');
       this.colorTiles();
       this.jump();
       this.saveGuess();
@@ -236,6 +236,7 @@ export default class Game {
       setTimeout(() => {
         this.togglePopUp();
       }, 3500);
+
       setTimeout(() => {
         this.toggleAndLoadScoreboard();
       }, 4600);
@@ -278,9 +279,9 @@ export default class Game {
       return;
     }
 
-    if (!(validTickers.includes(currentGuess)) && currentGuess !== this.wordle) {
+    if (!(validAbbreviations.includes(currentGuess)) && currentGuess !== this.wordle) {
       this.shake();
-      this.setPopUpMessage('Not a ticker ');
+      this.setPopUpMessage('Not a valid answer');
       this.togglePopUp();
       return;
     }
@@ -297,7 +298,7 @@ export default class Game {
       this.setGameOver(true);
       this.disableHardModeCheckbox();
       this.updateStatsOnWin();
-      this.setPopUpMessage('HUZZAH');
+      this.setPopUpMessage('Well Done!');
       this.colorTiles();
       this.jump();
       this.saveGuess();
@@ -764,7 +765,7 @@ export default class Game {
 
     if (this.gameOver) {
       const countdown = document.getElementById('countdown-container');
-      countdown.innerHTML = `<h5>NEXT STOCKLE</h5><span> ${hours.slice(-2)} : ${minutes.slice(-2)} : ${seconds.slice(-2)}`;
+      countdown.innerHTML = `<h5>NEXT MEDICLE</h5><span> ${hours.slice(-2)} : ${minutes.slice(-2)} : ${seconds.slice(-2)}`;
     }
   }
 
@@ -805,15 +806,15 @@ export default class Game {
   copyResults() {
     if (this.gameWon === true) {
       if (this.hardMode) {
-        this.emojiCopyPaste += `Stockle ${this.wordleNumber()} ${this.currentRow + 1}/6*  \n`;
+        this.emojiCopyPaste += `Medicle ${this.wordleNumber()} ${this.currentRow + 1}/6*  \n`;
       } else {
-        this.emojiCopyPaste += `Stockle ${this.wordleNumber()} ${this.currentRow + 1}/6  \n`;
+        this.emojiCopyPaste += `Medicle ${this.wordleNumber()} ${this.currentRow + 1}/6  \n`;
       }
     } else {
       if (this.hardMode) {
-        this.emojiCopyPaste += `Stockle ${this.wordleNumber()} X/6*  \n`
+        this.emojiCopyPaste += `Medicle ${this.wordleNumber()} X/6*  \n`
       } else {
-        this.emojiCopyPaste += `Stockle ${this.wordleNumber()} X/6  \n`
+        this.emojiCopyPaste += `Medicle ${this.wordleNumber()} X/6  \n`
       }
     }
 
@@ -859,7 +860,7 @@ export default class Game {
 
       this.emojiCopyPaste += '  \n';
     }
-    this.emojiCopyPaste += 'www.stockle.org';
+    this.emojiCopyPaste += 'www.medicle.org';
   }
 
   // Function to add 1 to currentTile and save it to localStorage
@@ -1220,15 +1221,15 @@ export default class Game {
     if (!this.gameOver) return;
     if (this.gameWon === true) {
       if (this.hardMode) {
-        this.emojiCopyPaste += `Stockle ${this.wordleNumber()} ${this.currentRow}/6*  \n`;
+        this.emojiCopyPaste += `Medicle ${this.wordleNumber()} ${this.currentRow}/6*  \n`;
       } else {
-        this.emojiCopyPaste += `Stockle ${this.wordleNumber()} ${this.currentRow}/6  \n`;
+        this.emojiCopyPaste += `Medicle ${this.wordleNumber()} ${this.currentRow}/6  \n`;
       }
     } else {
       if (this.hardMode) {
-        this.emojiCopyPaste += `Stockle ${this.wordleNumber()} X/6*  \n`;
+        this.emojiCopyPaste += `Medicle ${this.wordleNumber()} X/6*  \n`;
       } else {
-        this.emojiCopyPaste += `Stockle ${this.wordleNumber()} X/6  \n`;
+        this.emojiCopyPaste += `Medicle ${this.wordleNumber()} X/6  \n`;
       }
     }
 
@@ -1274,14 +1275,14 @@ export default class Game {
 
       this.emojiCopyPaste += '  \n';
     }
-    this.emojiCopyPaste += 'www.stockle.org';
+    this.emojiCopyPaste += 'www.medicle.org';
   }
 
   // Code to define which day it is
   wordleNumber() {
     const days = differenceInDays(
       new Date(),
-      new Date(2022, 8, 12) //Day 0
+      new Date(2022, 8, 20) //Day 0
     );
     return days;
   }
@@ -1299,8 +1300,10 @@ export default class Game {
 
 // Fix copy to clipboard on RIF embedded browser
 
-// Make shake animation go further left and right on mobile
+// Make definition pop up after each guess
 
-//
+// Make definition pop up after win
+
+// Figure out a way to show definitions
 
 // DOLE
