@@ -10,7 +10,8 @@ export default class Game {
 
   constructor() {
     this.day = this.wordleNumber();
-    this.wordle = validAnswers[this.day];
+    this.wordle = validAnswers[this.day]['abbreviation'];
+    this.definition = validAnswers[this.day]['definition'];
     this.l = this.wordle.length;
     this.guesses = this.makeGuessesArray(this.l)
     this.gameWon = false;
@@ -227,19 +228,22 @@ export default class Game {
       this.setGameOver(true);
       this.disableHardModeCheckbox();
       this.updateStatsOnWin();
-      this.setPopUpMessage('Well Done!');
       this.colorTiles();
       this.jump();
       this.saveGuess();
       this.copyResults();
       this.storeLastWinRow();
       setTimeout(() => {
+        this.setPopUpMessage('Well Done!');
         this.togglePopUp();
       }, 3500);
-
+      setTimeout(() => {
+        this.setPopUpMessage(this.definition);
+        this.togglePopUpSuperLong();
+      }, 4750);
       setTimeout(() => {
         this.toggleAndLoadScoreboard();
-      }, 4600);
+      }, 8000);
       return;
     }
 
@@ -247,23 +251,33 @@ export default class Game {
       this.setGameOver(true);
       this.disableHardModeCheckbox();
       this.updateStatsOnLoss();
-      this.setPopUpMessage(this.wordle.toUpperCase());
       this.colorTiles();
       this.saveGuess();
       this.copyResults();
       setTimeout(() => {
-        this.togglePopUpLong();
+        this.setPopUpMessage(`${this.wordle}: ${this.definition}`);
+        this.togglePopUpSuperLong();
       }, 2000);
       setTimeout(() => {
         this.toggleAndLoadScoreboard();
-      }, 4200);
+      }, 5250);
     } else {
       this.colorTiles();
       this.saveGuess();
       this.addToCurrentRow();
       this.resetCurrentTile();
       this.disableHardModeCheckbox();
+      setTimeout(() => {
+        this.setPopUpMessage(this.getDefinition(currentGuess));
+        this.togglePopUpLong();
+      }, 2000);
     }
+  }
+
+  // Get Definition
+  getDefinition(guess) {
+    let abbreviation = abbreviationsObjects.find(obj => obj.abbreviation === guess);
+    return abbreviation['definition'];
   }
 
   // CheckGuess for Hard Mode
@@ -298,18 +312,22 @@ export default class Game {
       this.setGameOver(true);
       this.disableHardModeCheckbox();
       this.updateStatsOnWin();
-      this.setPopUpMessage('Well Done!');
       this.colorTiles();
       this.jump();
       this.saveGuess();
       this.copyResults();
       this.storeLastWinRow();
       setTimeout(() => {
+        this.setPopUpMessage('Well Done!');
         this.togglePopUp();
       }, 3500);
       setTimeout(() => {
+        this.setPopUpMessage(this.definition);
+        this.togglePopUpSuperLong();
+      }, 4750);
+      setTimeout(() => {
         this.toggleAndLoadScoreboard();
-      }, 4600);
+      }, 8000);
       return;
     }
 
@@ -317,22 +335,26 @@ export default class Game {
       this.setGameOver(true);
       this.disableHardModeCheckbox();
       this.updateStatsOnLoss();
-      this.setPopUpMessage(this.wordle.toUpperCase());
       this.colorTiles();
       this.saveGuess();
       this.copyResults();
       setTimeout(() => {
-        this.togglePopUpLong();
+        this.setPopUpMessage(`${this.wordle}: ${this.definition}`);
+        this.togglePopUpSuperLong();
       }, 2000);
       setTimeout(() => {
         this.toggleAndLoadScoreboard();
-      }, 4200);
+      }, 5250);
     } else {
       this.colorTiles();
       this.saveGuess();
       this.addToCurrentRow();
       this.resetCurrentTile();
       this.disableHardModeCheckbox();
+      setTimeout(() => {
+        this.setPopUpMessage(this.getDefinition(currentGuess));
+        this.togglePopUpLong();
+      }, 2000);
     }
   }
 
@@ -490,6 +512,15 @@ export default class Game {
     setTimeout(() => {
       popUpMessage.classList.toggle('popup-hide');
     }, 2000);
+  }
+
+  // Function to make pop up message to appear temporarily but for longer
+  togglePopUpSuperLong() {
+    const popUpMessage = document.getElementById('popup');
+    popUpMessage.classList.toggle('popup-hide');
+    setTimeout(() => {
+      popUpMessage.classList.toggle('popup-hide');
+    }, 3000);
   }
 
   // Function to shake current row of tiles when guess is invalid
@@ -1299,11 +1330,5 @@ export default class Game {
 }
 
 // Fix copy to clipboard on RIF embedded browser
-
-// Make definition pop up after each guess
-
-// Make definition pop up after win
-
-// Figure out a way to show definitions
 
 // DOLE

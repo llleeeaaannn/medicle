@@ -1,7 +1,10 @@
 export { validAnswers, validAbbreviations, abbreviationsObjects };
 
 const validAnswers = [
-  "AAA", "ACH", "AGA", "EFA"
+  { abbreviation: 'AAA', definition: 'Aids and Appliances' },
+  { abbreviation: 'AACG', definition: 'Abdominal aortic aneurysm' },
+  { abbreviation: 'ABC', definition: 'Airway breathing circulation' },
+  { abbreviation: 'ABG', definition: 'Arterial blood gas' }
 ]
 
 const validAbbreviations = [
