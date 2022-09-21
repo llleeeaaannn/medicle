@@ -1,10 +1,12 @@
 export { validAnswers, validAbbreviations, abbreviationsObjects };
 
 const validAnswers = [
-  { abbreviation: 'AAA', definition: 'Aids and Appliances' },
-  { abbreviation: 'AACG', definition: 'Abdominal aortic aneurysm' },
-  { abbreviation: 'ABC', definition: 'Airway breathing circulation' },
-  { abbreviation: 'ABG', definition: 'Arterial blood gas' }
+  { abbreviation: 'BGL', definition: 'Blood glucose level' },
+  { abbreviation: 'ADHD', definition: 'Attention deficit hyperactivity disorder' },
+  { abbreviation: 'COLD', definition: 'Chronic obstructive lung disease' },
+  { abbreviation: 'DEXA', definition: 'Dual energy x-ray absortiometry' },
+  { abbreviation: 'EUA', definition: 'Examination under anaesthetic' },
+
 ]
 
 const validAbbreviations = [

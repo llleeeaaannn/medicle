@@ -348,6 +348,7 @@ svg {
 	place-items: center;
   padding: 1.25rem;
   border-radius: 0.3rem;
+	text-transform: capitalize;
 	color: var(--oppositeFont);
   background-color: var(--oppositeBG);
 	opacity: 0;

@@ -1,6 +1,4 @@
 /* eslint-disable */
-
-
 import './style.css';
 import { differenceInDays } from 'date-fns';
 import { keysArray, validLetters, colorKeys, darkStyle, darkContrastStyle, lightStyle, lightContrastStyle } from './variables.mjs';
@@ -1330,5 +1328,9 @@ export default class Game {
 }
 
 // Fix copy to clipboard on RIF embedded browser
+
+// Make unlimited version (seperately in different repo )
+
+// Capitilise firs letter of every word in definitions
 
 // DOLE
