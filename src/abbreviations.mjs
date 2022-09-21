@@ -1,6 +1,7 @@
 export { validAnswers, validAbbreviations, abbreviationsObjects };
 
 const validAnswers = [
+  { abbreviation: 'ACT', definition: 'Airway clearance technique' },
   { abbreviation: 'BGL', definition: 'Blood glucose level' },
   { abbreviation: 'ADHD', definition: 'Attention deficit hyperactivity disorder' },
   { abbreviation: 'COLD', definition: 'Chronic obstructive lung disease' },
