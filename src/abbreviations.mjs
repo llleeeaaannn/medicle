@@ -5,8 +5,7 @@ const validAnswers = [
   { abbreviation: 'ADHD', definition: 'Attention deficit hyperactivity disorder' },
   { abbreviation: 'COLD', definition: 'Chronic obstructive lung disease' },
   { abbreviation: 'DEXA', definition: 'Dual energy x-ray absortiometry' },
-  { abbreviation: 'EUA', definition: 'Examination under anaesthetic' },
-
+  { abbreviation: 'EUA', definition: 'Examination under anaesthetic' }
 ]
 
 const validAbbreviations = [

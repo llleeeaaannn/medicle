@@ -1331,6 +1331,8 @@ export default class Game {
 
 // Make unlimited version (seperately in different repo )
 
-// Capitilise firs letter of every word in definitions
+
+// Wrong answer appearing
+
 
 // DOLE
