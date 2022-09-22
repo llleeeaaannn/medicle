@@ -711,8 +711,8 @@ const validAbbreviations = [
 ]
 
 const abbreviationsObjects = [
-  { abbreviation: 'AAA', definition: 'Aids and Appliances' },
-  { abbreviation: 'AACG', definition: 'Abdominal aortic aneurysm' },
+  { abbreviation: 'AAA', definition: 'Abdominal aortic aneurysm' },
+  { abbreviation: 'AACG', definition: 'Acute angle closure glaucoma' },
   { abbreviation: 'ABC', definition: 'Airway breathing circulation' },
   { abbreviation: 'ABG', definition: 'Arterial blood gas' },
   { abbreviation: 'ABI', definition: 'Ankle brachial index' },
