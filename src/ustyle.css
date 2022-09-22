@@ -1,0 +1,1592 @@
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 10 0%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Color Themes */
+/* Dark {
+  --fontColor: rgba(255, 255, 255, 1);
+  --oppositeFont: rgba(0, 0 ,0, 1);
+  --colorBG: rgba(0, 0 ,0, 1);
+  --oppositeBG: rgba(255, 255, 255, 1);
+  --secondFontColor: rgba(136, 132, 132, 1);
+  --offsetColorBG: rgba(20, 20, 20, 1);
+  --tileBorder: 2px solid rgba(60, 60 ,60, 0.6);
+  --tileOnRowBorder: 2px solid rgba(83, 83, 91, 0.75);
+  --disabledSwitch: brightness(50%);
+  --settingsLineColor: rgba(60, 60, 60, 0.5);
+  --chartBarColor: rgba(70, 70, 70, 0.8);
+  --invisibleBG: rgba(0, 0 ,0, 0.0);
+  --greenBG: rgba(88, 140, 76, 1);
+  --yellowBG: rgba(184, 155, 60, 1);
+  --switchDisabledGreen: rgba(39, 64, 34, 1);
+	--switchDisabledKnob: rgba(161, 161, 161, 1);
+  --darkGreyBG: rgba(64, 60, 60, 1);
+  --lightGreyBG: rgba(136, 132, 132, 1);
+	--shadowGrey: rgba(0, 0, 0, 0);
+  --opaqueBG: rgba(0, 0, 0, 0.5);
+  --uncheckedKey: rgba(255, 255, 255, 1);
+  --checkedKey: rgba(255, 255, 255, 1);
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0 ,0, 1);
+} */
+
+/* Light {
+  --fontColor: rgba(0, 0 ,0, 1);
+  --oppositeFont: rgba(255, 255, 255, 1);
+  --colorBG: rgba(255, 255, 255, 1);
+  --oppositeBG: rgba(0, 0 ,0, 1);
+  --secondFontColor: rgba(136, 132, 132, 1);
+  --offsetColorBG: rgba(255, 255, 255, 1);
+  --tileBorder: 2px solid rgba(83, 83, 91, 0.3);
+  --tileOnRowBorder: 2px solid rgba(83, 83, 91, 0.75);
+  --disabledSwitch: brightness(200%);
+  --settingsLineColor: rgba(60, 60, 60, 0.5);
+  --chartBarColor: rgba(70, 70, 70, 0.8);
+  --invisibleBG: rgba(0, 0 ,0, 0.0);
+  --greenBG: rgba(88, 140, 76, 1);
+  --yellowBG: rgba(184, 155, 60, 1);
+  --darkGreyBG: rgba(64, 60, 60, 1);
+  --lightGreyBG: rgba(216, 212, 220, 1);
+	--shadowGrey: rgba(200, 200, 200, 0.4);
+  --opaqueBG: rgba(255, 255, 255, 0.5);
+  --uncheckedKey: rgba(0, 0 ,0, 1);
+  --checkedKey: rgba(255, 255, 255, 1);
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0 ,0, 1);
+} */
+
+/* Contrast {
+	--greenBG: rgba(136, 196, 252, 1);
+	--yellowBG: rgba(248, 124, 60, 1);
+	--switchDisabledGreen: rgba(101, 149, 194, 1);
+} */
+
+/* Root Styling */
+:root {
+	--fs-xs: 0.7rem;
+	--fs-sm: 0.85rem;
+	--fs-base: 1rem;
+	--fs-md: 1.2rem;
+	--fs-lg: 1.5rem;
+	--fs-xl: 2rem;
+  --fs-xxl: 4rem;
+  --fs-xxxl: 5rem;
+}
+
+/* Fonts */
+@font-face {
+  font-family: NeueHelveticaBQ;
+  src: url("NeueHelveticaBQ-Bold.woff2") format("woff");
+}
+
+@font-face {
+  font-family: NeueHelveticaLight;
+  src: url("NeueHelveticaLight.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: NYTKarnak;
+  src: url("NYTKarnak-Text.woff2") format("woff");
+}
+
+/* General body styling */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+	position: absolute;
+  background-color: var(--colorBG);
+  color: var(--fontColor);
+	font-family: 'NeueHelveticaBQ', sans-serif;
+}
+
+button {
+  cursor: pointer;
+	font-family: 'NeueHelveticaBQ', sans-serif;
+}
+
+/* Containers styling for flexbox and sizing */
+#container {
+	position: relative;
+	display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+#header-container {
+	display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+	height: 7vh;
+  width: 100vw;
+  border-bottom: 1px solid var(--settingsLineColor);
+}
+
+#tile-container {
+  position: relative;
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  border: none;
+}
+
+/* Styling for header */
+#name-container {
+	position: relative;
+}
+
+#name-container h1 {
+	font-size: var(--fs-xl);
+	font-family: NYTKarnak;
+	letter-spacing: 0.2rem;
+}
+
+#name-container h2 {
+	position: absolute;
+	bottom: -0.25rem;
+	right: -1rem;
+	transform: rotate(-5deg);
+	color: var(--lightGreyBG);
+	font-size: var(--fs-md);
+	font-family: NYTKarnak;
+	letter-spacing: 0.2rem;
+}
+
+/* SVG Icon Styling */
+svg {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke: var(--oppositeBG);
+  stroke-width: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 1rem;
+}
+
+#score-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: butt;
+}
+
+#settings-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke-width: 10;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+}
+
+#settings-icon polyline {
+  fill: var(--oppositeBG);
+}
+
+/* Styling for each row of tiles (mainly flexbox) */
+#tile-container > div {
+  display: flex;
+  flex-direction: row;
+  border: none;
+}
+
+/* Styling for each tile */
+#tile-container > div > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-xl);
+	width: 4rem;
+  height: 4rem;
+  margin: 2px;
+	border: var(--tileBorder);
+}
+
+/* Styling to change tile border colour when selected */
+#tile-container .on-row {
+  border: var(--tileOnRowBorder);
+}
+
+/* Keyboard Styling */
+#keyboard-container {
+  margin-bottom: 0.25rem;
+}
+
+#keyboard-container > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  height: 33%;
+}
+
+#keyboard-container > div > div {
+	display: grid;
+	place-items: center;
+	height: 4rem;
+  width: 2.75rem;
+  margin: 0.25rem 0.2rem;
+	border: none;
+	border-radius: 0.3rem;
+	cursor: pointer;
+}
+
+/* #keyboard-container > div > button {
+	display: grid;
+	place-items: center;
+	height: 4rem;
+  width: 2.75rem;
+  margin: 0.25rem 0.2rem;
+	border: none;
+	border-radius: 0.3rem;
+	font-size: var(--fs-sm);
+	cursor: pointer;
+} */
+
+#keyboard-container span {
+	font-size: var(--fs-sm);
+	cursor: pointer;
+}
+
+/* Forcing keys of middle row to the center */
+#keyboard-container #keyboard-row1 {
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Increasing size of 'Enter' and 'Back' keys on keyboard */
+#keyboard-row2 :first-child,
+#keyboard-row2 :last-child {
+  flex: 1.5;
+}
+
+/* Colouring tiles*/
+#tile-container div.green-color {
+  background-color: var(--greenBG);
+  color: var(--white);
+  border: none;
+}
+
+#tile-container div.yellow-color {
+  background-color: var(--yellowBG);
+  color: var(--white);
+  border: none;
+}
+
+#tile-container div.darkgrey-color {
+  background-color: var(--darkGreyBG);
+  color: var(--white);
+  border: none;
+}
+
+#tile-container div.lightgrey-color {
+  background-color: var(--lightGreyBG)
+}
+
+/* Colouring keys */
+#keyboard-container .green-color-key {
+  background-color: var(--greenBG);
+  color: var(--checkedKey);
+}
+
+#keyboard-container .yellow-color-key {
+  background-color: var(--yellowBG);
+  color: var(--checkedKey);
+}
+
+#keyboard-container .darkgrey-color-key {
+  background-color: var(--darkGreyBG);
+  color: var(--checkedKey);
+}
+
+#keyboard-container .lightgrey-color-key {
+  background-color: var(--lightGreyBG);
+  color: var(--uncheckedKey);
+}
+
+/* Style for pop-up message */
+#popup {
+	position: absolute;
+	top: -1.5rem;
+  display: grid;
+	place-items: center;
+  padding: 1.25rem;
+  border-radius: 0.3rem;
+	text-transform: capitalize;
+	color: var(--oppositeFont);
+  background-color: var(--oppositeBG);
+	opacity: 0;
+  z-index: 100;
+}
+
+#popup.popup-hide {
+  opacity: 1.0;
+}
+
+/* Scoreboard Container */
+#scoreboard {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	width: 100vw;
+	z-index: 2;
+	background-color: var(--opaqueBG);
+}
+
+#scoreboard.scoreboard-hide {
+	display: none;
+}
+
+#scoreboard-container {
+	position: relative;
+  display: flex;
+  flex-direction: column;
+	align-items: center;
+	min-width: 32rem;
+	padding: 1rem;
+  border-radius: 0.5rem;
+	box-shadow: 0rem 0rem 1rem 0.5rem var(--shadowGrey);
+  background-color: var(--offsetColorBG);
+}
+
+#close-scoreboard-button {
+	position: absolute;
+	right: 0.75rem;
+	top: 0.75rem;
+	height: 1rem;
+	width: 1rem;
+	margin: 0rem;
+	cursor: pointer;
+}
+
+#scores-container {
+  display: flex;
+  flex-direction: row;
+	margin: 1rem 0rem;
+}
+
+#scores-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+#scores-container > div :first-child {
+	margin-bottom: 0.2rem;
+}
+
+#scores-container span {
+  font-size: var(--fs-xs);
+  font-family: 'NeueHelveticaLight', sans-serif;
+}
+
+#scores-container .value {
+  font-size: var(--fs-xl);
+	font-family: 'NeueHelveticaBQ', sans-serif;
+}
+
+#scoreboard-container h3 {
+	font-size: var(--fs-lg);
+	margin-top: 1rem;
+}
+
+#scoreboard-container h4 {
+  font-size: var(fs-base);
+}
+
+/* Scoreboard Chart Styling */
+#chart-score-container {
+  width: 80%;
+  margin: 0.5rem;
+}
+
+#chart-score-container span {
+  display: grid;
+	place-items: center;
+  margin-right: 0.5rem;
+  color: var(--fontColor);
+}
+
+#chart-score-container p {
+  color: var(--white);
+  float: right;
+	margin-right: 0.1rem;
+}
+
+#chart-one,
+#chart-two,
+#chart-three,
+#chart-four,
+#chart-five,
+#chart-six {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+	align-items: center;
+  margin: 0.25rem;
+}
+
+#bar-chart-1,
+#bar-chart-2,
+#bar-chart-3,
+#bar-chart-4,
+#bar-chart-5,
+#bar-chart-6 {
+  min-width: 7%;
+  background-color: var(--chartBarColor);
+  padding: 0.15rem;
+}
+
+#chart-score-container .zero {
+	display: grid;
+	place-items: center;
+	width: 7%;
+}
+
+#chart-score-container > div > div.green-bar {
+  background-color: var(--greenBG);
+}
+
+
+/* Styling for clock & share container */
+#clock-share-container {
+  display: flex;
+  flex-direction: row;
+	justify-content: center;
+  align-items: center;
+	margin: 0.5rem 0rem;
+}
+
+#clock-share-container.hide-clock-share {
+  display: none;
+}
+
+/* Border Between Buttons Styling */
+#share-container {
+  border-left: 1px solid var(--fontColor);
+}
+
+
+/* Share Button Styling */
+#share-container button {
+  color: var(--white);
+  background-color: var(--greenBG);
+	font-size: var(--fs-lg);
+	width: 12rem;
+	padding: 0.5rem 0.5rem;
+	margin: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+#share-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+/* Play Again Button Styling */
+#play-again-container button {
+  color: var(--white);
+  background-color: var(--greenBG);
+	font-size: var(--fs-lg);
+	width: 12rem;
+	padding: 0.5rem 0.5rem;
+	margin: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+#play-again-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+/* Settings Styling */
+#settings-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: grid;
+	place-items: center;
+	background-color: var(--opaqueBG);
+	height: 100vh;
+	width: 100vw;
+	z-index: 2;
+}
+
+#settings-container.settings-hide {
+  display: none;
+}
+
+#settings-inner-container {
+	position: relative;
+  display: flex;
+  flex-direction: column;
+	align-items: center;
+	min-width: 32rem;
+	border-radius: 0.5rem;
+	box-shadow: 0rem 0rem 1rem 0.5rem var(--shadowGrey);
+	background-color: var(--offsetColorBG);
+}
+
+#close-settings-button {
+	position: absolute;
+	right: 0.75rem;
+	top: 0.75rem;
+	height: 1rem;
+	width: 1rem;
+	margin: 0rem;
+	cursor: pointer;
+}
+
+#settings-header,
+#settings-hard-mode,
+#settings-dark-theme,
+#settings-high-contrast,
+#settings-feedback,
+#settings-community,
+#settings-questions,
+#settings-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+	align-items: center;
+	width: 90%;
+  padding: 1rem 0rem;
+  border-bottom: 1px solid var(--settingsLineColor);
+}
+
+#settings-header {
+	justify-content: center;
+}
+
+#settings-footer,
+#settings-header {
+  border: none;
+}
+
+#settings-inner-container input[type="checkbox"] {
+	accent-color: var(--greenBG);
+	cursor: pointer;
+}
+
+#hard-mode-switch input[disabled] {
+	pointer-events: none;
+}
+
+.settings-extra-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-extra-text span {
+  margin-bottom: 0.25rem;
+}
+
+/* Settings Switch/Checkbox */
+.settings-switch {
+	position: relative;
+  display: block;
+  width: 45px;
+	min-width: 45px;
+  height: 25px;
+	min-height: 25px;
+  cursor: pointer;
+}
+
+.settings-switch input[type="checkbox"]{
+  display: none;
+}
+
+.settings-switch input[type="checkbox"]:checked+.toggler-slider {
+  background-color: var(--greenBG);
+}
+
+.settings-switch input[type="checkbox"]:disabled+.toggler-slider {
+  filter: brightness(50%);
+}
+
+.settings-switch .toggler-slider {
+  background-color: var(--darkGreyBG);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+	border-radius: 12.5px;
+  transition: all 300ms ease;
+}
+
+.settings-switch .toggler-knob {
+  position: absolute;
+  transition: all 300ms ease;
+}
+
+.settings-switch input[type="checkbox"]:checked+.toggler-slider .toggler-knob {
+  left: calc(100% - 19px - 3px);
+}
+
+.settings-switch .toggler-knob {
+	top: 3px;
+	left: 3px;
+  width: calc(25px - 6px);
+  height: calc(25px - 6px);
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+/* Settings text styling */
+#settings-container span,
+#settings-container p,
+#settings-container a {
+  font-family: 'NeueHelveticaLight', sans-serif;
+}
+
+#settings-container h3 {
+  font-size: var(--fs-md);
+	font-family: 'NeueHelveticaBQ', sans-serif;
+}
+
+#settings-container span {
+  font-size: var(--fs-base);
+}
+
+#settings-container p {
+  color: var(--secondFontColor);
+  font-size: var(--fs-xs);
+}
+
+#settings-container a {
+  color: var(--secondFontColor);
+  font-size: var(--fs-sm);
+	text-decoration: none;
+}
+
+/* Animations */
+/* Styling to shake current row of divs when answer is not valid */
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translate(-6px) }
+  10% { transform: translate(1px) }
+  20% { transform: translate(8px) }
+  30% { transform: translate(-2px) }
+  40% { transform: translate(8px) }
+  50% { transform: translate(0px) }
+  60% { transform: translate(8px) }
+  70% { transform: translate(-1px) }
+  80% { transform: translate(-8px) }
+  90% { transform: translate(0px) }
+  100% { transform: translate(6px) }
+}
+
+/* Styling to make individual tiles jump when correct */
+.jump {
+  animation: jump 0.6s;
+}
+
+@keyframes jump {
+  0% { transform: translate(0px, -5px) }
+  5% { transform: translate(0px, -8px) }
+  10% { transform: translate(0px, -12px) }
+  15% { transform: translate(0px, -18px) }
+  20% { transform: translate(0px, -24px) }
+  25% { transform: translate(0px, -30px) }
+  30% { transform: translate(0px, -24px) }
+  35% { transform: translate(0px, -18px) }
+  40% { transform: translate(0px, -12px) }
+  45% { transform: translate(0px, -7px) }
+  50% { transform: translate(0px, -2px) }
+  55% { transform: translate(0px, -0px) }
+  60% { transform: translate(0px, -0px) }
+  65% { transform: translate(0px, -0px) }
+  70% { transform: translate(0px, -3px) }
+  75% { transform: translate(0px, -6px) }
+  80% { transform: translate(0px, -7px) }
+  85% { transform: translate(0px, -6px) }
+  90% { transform: translate(0px, -3px) }
+  95% { transform: translate(0px, -0px) }
+  100% { transform: translate(0px, -0px) }
+}
+
+/* Make tiles flip */
+.flip {
+    animation: 0.8s linear flipping;
+}
+
+@keyframes flipping {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* Styling to reveal page once CSS is loaded */
+html {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Styling for cover */
+#cover {
+	display: none;
+}
+
+/* Styling for hidden copy & paste textarea */
+#hidden-copy-input,
+#hidden-textarea {
+	position: absolute;
+	top: -1000;
+	left: -1000;
+	height: 0;
+	width: 0;
+	background-color: var(--colorBG);
+	border-color: var(--colorBG);
+	z-index: -1000;
+}
+
+/* Media Query for Mobile Devices below 480px in width */
+@media (max-device-width:480px) {
+
+	#container {
+		position: fixed;
+		top: 0;
+		display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	  align-items: center;
+		min-height: 100%;
+		max-height: 100%;
+	}
+
+	/* Tile Stlying */
+	#tile-container {
+	  position: relative;
+		display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  width: 100vw;
+		height: 60%;
+	  border: none;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	/* Styling for each row of tiles (mainly flexbox) */
+	#tile-container > div[id^="row"] {
+	  display: flex;
+	  flex-direction: row;
+		justify-content: center;
+		width: 100%;
+		margin: 0.4rem 0rem;
+	  border: none;
+	}
+
+	/* Styling for each tile */
+	#tile-container > div > div {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  height: 8vh;
+		width: 8vh;
+	  margin: 0rem 0.4rem;
+		border: var(--tileBorder);
+		border-width: 0.35rem;
+		font-size: var(--fs-xxxl);
+	}
+
+	/* Styling to change tile border colour when selected */
+	#tile-container .on-row {
+	  border: var(--tileOnRowBorder);
+		border-width: 0.35rem;
+	}
+
+
+
+	/* Keyboard Styling */
+	#keyboard-container {
+		width: 100vw;
+		min-height: 28%;
+		padding: 2%;
+	}
+
+	#keyboard-container > div {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-around;
+	  text-align: center;
+	  height: 30.66%;
+		touch-action: manipulation;
+	}
+
+	#keyboard-container > div > div {
+		display: grid;
+		place-items: center;
+		flex: 1;
+		height: 100%;
+	  margin: 0 1%;
+		border: none;
+		border-radius: 0.5rem;
+		cursor: pointer;
+		touch-action: manipulation;
+	}
+
+	#keyboard-row0,
+	#keyboard-row1 {
+		margin-bottom: 2%;
+	}
+
+	/* Forcing keys of middle row to the center */
+	#keyboard-container #keyboard-row1 {
+		justify-content: center;
+		margin-left: 4.85%;
+		margin-right: 4.85%;
+	}
+
+	/* Increasing size of 'Enter' and 'Back' keys on keyboard */
+	#keyboard-row2 :first-child,
+	#keyboard-row2 :last-child {
+	  flex: 1.6055;
+	}
+
+	#keyboard-container span {
+		font-size: var(--fs-xl);
+		cursor: pointer;
+	}
+
+
+
+	/* Header Styling */
+	#header-container {
+		display: flex;
+	  flex-direction: row;
+	  justify-content: space-between;
+	  align-items: center;
+		height: 7%;
+	  width: 100vw;
+		border-bottom: var(--tileBorder);
+		border-width: 0.2rem;
+	}
+
+	/* Styling for header */
+	#name-container h1 {
+		font-size: var(--fs-xxl);
+		font-family: NYTKarnak;
+		letter-spacing: 0.25rem;
+	}
+
+	#name-container h2 {
+		position: absolute;
+		bottom: -0.5rem;
+		right: -1.25rem;
+		transform: rotate(-5deg);
+		color: var(--lightGreyBG);
+		font-size: var(--fs-xl);
+		font-family: NYTKarnak;
+		letter-spacing: 0.2rem;
+	}
+
+	#score-icon,
+	#settings-icon {
+	  width: 6rem;
+	  height: 6rem;
+	}
+
+
+
+	/* Popup Styling */
+	#popup {
+		position: absolute;
+		top: -1.5rem;
+	  display: grid;
+		place-items: center;
+	  padding: 2rem;
+	  border-radius: 0.75rem;
+		color: var(--oppositeFont);
+	  background-color: var(--oppositeBG);
+		opacity: 0;
+	  z-index: 100;
+	}
+
+	#popup p {
+		font-size: var(--fs-xl);
+	}
+
+
+
+	/* Scoreboard Styling */
+	/* Scoreboard Container */
+	#scoreboard {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100%;
+		max-height: 100%;
+		width: 100vw;
+		z-index: 2;
+		background-color: var(--opaqueBG);
+	}
+
+	#scoreboard-container {
+		width: 90%;
+		padding: 1rem;
+		padding-bottom: 2rem;
+	  border-radius: 1rem;
+	}
+
+	#close-scoreboard-button {
+		right: 2rem;
+		top: 2rem;
+		height: 3rem;
+		width: 3rem;
+	}
+
+	#scores-container > div {
+	  padding: 1rem;
+	}
+
+	#scores-container span {
+	  font-size: 1.75rem;
+	}
+
+	#scores-container .value {
+	  font-size: var(--fs-xxxl);
+	}
+
+	#scoreboard-container h3 {
+		font-size: 2.5rem;
+	}
+
+	#scoreboard-container h4 {
+		font-size: var(--fs-xl);
+		margin-top: 2rem;
+	}
+
+	/* Scoreboard Chart Styling */
+	#chart-score-container span {
+	  margin-right: 1rem;
+		font-size: var(--fs-xl);
+	}
+
+	#chart-score-container p {
+		font-size: var(--fs-xl);
+		margin-right: 0.2rem;
+	}
+
+	#chart-one,
+	#chart-two,
+	#chart-three,
+	#chart-four,
+	#chart-five,
+	#chart-six {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: flex-start;
+		align-items: center;
+	  margin: 0.6rem;
+	}
+
+	#bar-chart-1,
+	#bar-chart-2,
+	#bar-chart-3,
+	#bar-chart-4,
+	#bar-chart-5,
+	#bar-chart-6 {
+	  padding: 0.5rem;
+	}
+
+	/* Styling for clock & share container */
+	#clock-share-container {
+		width: 90%;
+		margin-top: 2rem;
+	}
+
+	/* Share Button Styling */
+	#share-container {
+		width: 50%;
+		padding: 1rem 0rem;
+	}
+
+	#share-container button {
+		font-size: 3rem;
+		width: 90%;
+		padding: 1rem 1rem;
+		margin: 0 0 0 2rem;
+	  border-radius: 0.5rem;
+	}
+
+	/* Share Button Styling */
+	#play-again-container {
+		width: 50%;
+		padding: 1rem 0rem;
+	}
+
+	#play-again-container button {
+		font-size: 3rem;
+		width: 90%;
+		padding: 1rem 1rem;
+		margin: 0 2rem 0 0;
+	  border-radius: 0.5rem;
+	}
+
+	/* Settings Styling */
+	#settings-container {
+		min-height: 100%;
+		max-height: 100%;
+	}
+
+	#settings-inner-container {
+		width: 90%;
+		border-radius: 1rem;
+	}
+
+	#close-settings-button {
+		right: 2rem;
+		top: 2rem;
+		height: 3rem;
+		width: 3rem;
+		margin: 0rem;
+	}
+
+	#settings-header,
+	#settings-hard-mode,
+	#settings-dark-theme,
+	#settings-high-contrast,
+	#settings-feedback,
+	#settings-community,
+	#settings-questions,
+	#settings-footer {
+	  padding: 2.5rem 0rem;
+	}
+
+	#settings-header {
+		padding-top: 0;
+	}
+
+	.settings-extra-text span {
+	  margin-bottom: 0.5rem;
+	}
+
+	/* Settings Switch/Checkbox */
+	.settings-switch {
+		width: 4.5rem;
+		min-width: 4.5rem;
+		height: 2.75rem;
+		min-height: 2.75rem;
+	}
+
+	.settings-switch .toggler-slider {
+		border-radius: 1.375rem;
+	}
+
+	.settings-switch input[type="checkbox"]:checked+.toggler-slider .toggler-knob {
+		left: calc(100% - 2.25rem - 0.25rem);
+	}
+
+	.settings-switch .toggler-knob {
+		top: 0.25rem;
+		left: 0.25rem;
+		width: calc(2.75rem - 0.5rem);
+		height: calc(2.75rem - 0.5rem);
+	}
+
+	/* Settings text styling */
+	#settings-container h3 {
+		font-size: 2.5rem;
+		margin-top: 2rem;
+	}
+
+	#settings-container span {
+	  font-size: 2.5rem;
+	}
+
+	#settings-container p {
+	  color: var(--secondFontColor);
+	  font-size: 1.75rem;
+	}
+
+	#settings-container a {
+	  font-size: var(--fs-xl);
+	}
+
+	/* Mobile styling to shake current row of divs when answer is not valid */
+	.shake {
+	  animation: shake 0.5s;
+	}
+
+	@keyframes shake {
+	  0% { transform: translate(-12px) }
+	  10% { transform: translate(2px) }
+	  20% { transform: translate(15px) }
+	  30% { transform: translate(-2px) }
+	  40% { transform: translate(-18px) }
+	  50% { transform: translate(-4px) }
+	  60% { transform: translate(4px) }
+	  70% { transform: translate(12px) }
+	  80% { transform: translate(-2px) }
+	  90% { transform: translate(-10px) }
+	  100% { transform: translate(4px) }
+	}
+}
+
+/* Media Query for Mobile Devices below 480px in width when in landscape mode*/
+@media (max-device-width: 480px) and (orientation: landscape) {
+
+	/* Cover Styling */
+	#cover {
+		position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100vw;
+	  height: 100vh;
+		display: grid;
+		place-items: center;
+		background-color: var(--colorBG);
+		z-index: 1000;
+	}
+
+	#cover p {
+		color: var(--fontColor);
+		font-size: var(--fs-xl);
+		font-family: NYTKarnak;
+		margin: 3rem;
+	}
+
+}
+
+/* Media Query for Tablet Devices above 480px in width and below 768px in width*/
+@media (min-device-width:481px) and (max-device-width: 820px) {
+
+	#container {
+		position: fixed;
+		top: 0;
+		display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	  align-items: center;
+		min-height: 100%;
+		max-height: 100%;
+	}
+
+	/* Tile Stlying */
+	#tile-container {
+	  position: relative;
+		display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  width: 100vw;
+		height: 60%;
+	  border: none;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	/* Styling for each row of tiles (mainly flexbox) */
+	#tile-container > div[id^="row"] {
+	  display: flex;
+	  flex-direction: row;
+		justify-content: center;
+		width: 100%;
+		margin: 0.25rem 0rem;
+	  border: none;
+	}
+
+	/* Styling for each tile */
+	#tile-container > div > div {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  height: 6.5vh;
+		width: 6.5vh;
+	  margin: 0rem 0.25rem;
+		border: var(--tileBorder);
+		border-width: 0.2rem;
+		font-size: 2.75rem;
+	}
+
+	/* Styling to change tile border colour when selected */
+	#tile-container .on-row {
+	  border: var(--tileOnRowBorder);
+		border-width: 0.2rem;
+	}
+
+
+
+	/* Keyboard Styling */
+	#keyboard-container {
+		min-width: 70vw;
+		max-width: 70vw;
+		min-height: 22%;
+		max-height: 22%;
+		padding: 2%;
+	}
+
+	#keyboard-container > div {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-around;
+	  text-align: center;
+	  height: 32.33%;
+		touch-action: manipulation;
+	}
+
+	#keyboard-container > div > div {
+		display: grid;
+		place-items: center;
+		flex: 1;
+		height: 100%;
+	  margin: 0 0.75%;
+		border: none;
+		border-radius: 0.5rem;
+		cursor: pointer;
+		touch-action: manipulation;
+	}
+
+	#keyboard-row0,
+	#keyboard-row1 {
+		margin-bottom: 1.5%;
+	}
+
+	/* Forcing keys of middle row to the center */
+	#keyboard-container #keyboard-row1 {
+		justify-content: center;
+		margin-left: 4.85%;
+		margin-right: 4.85%;
+	}
+
+	/* Increasing size of 'Enter' and 'Back' keys on keyboard */
+	#keyboard-row2 :first-child,
+	#keyboard-row2 :last-child {
+	  flex: 1.6055;
+	}
+
+	#keyboard-container span {
+		font-size: var(--fs-md);
+		cursor: pointer;
+	}
+
+
+
+	/* Header Styling */
+	#header-container {
+		display: flex;
+	  flex-direction: row;
+	  justify-content: space-between;
+	  align-items: center;
+		height: 6%;
+	  width: 100vw;
+		border-bottom: var(--tileBorder);
+		border-width: 0.1rem;
+	}
+
+	/* Styling for header */
+	#name-container h1 {
+		font-size: 3rem;
+		font-family: NYTKarnak;
+		letter-spacing: 0.25rem;
+	}
+
+	#name-container h2 {
+		position: absolute;
+		bottom: -0.25rem;
+		right: -1rem;
+		transform: rotate(-5deg);
+		color: var(--lightGreyBG);
+		font-size: var(--fs-lg);
+		font-family: NYTKarnak;
+		letter-spacing: 0.2rem;
+	}
+
+
+	#score-icon,
+	#settings-icon {
+	  width: 3rem;
+	  height: 3rem;
+	}
+
+
+
+	/* Popup Styling */
+	#popup {
+		position: absolute;
+		top: -1.5rem;
+	  display: grid;
+		place-items: center;
+	  padding: 1.25rem;
+	  border-radius: 0.5rem;
+		color: var(--oppositeFont);
+	  background-color: var(--oppositeBG);
+		opacity: 0;
+	  z-index: 100;
+	}
+
+	#popup p {
+		font-size: var(--fs-lg);
+	}
+
+
+
+	/* Scoreboard Styling */
+	/* Scoreboard Container */
+	#scoreboard {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100%;
+		max-height: 100%;
+		width: 100vw;
+		z-index: 2;
+		background-color: var(--opaqueBG);
+	}
+
+	#scoreboard-container {
+		width: 65%;
+		padding: 1rem;
+		padding-bottom: 2rem;
+	  border-radius: 1rem;
+	}
+
+	#close-scoreboard-button {
+		right: 1rem;
+		top: 1rem;
+		height: 2rem;
+		width: 2rem;
+	}
+
+	#scores-container > div {
+	  padding: 1rem;
+	}
+
+	#scores-container span {
+	  font-size: var(--fs-lg);
+	}
+
+	#scores-container .value {
+	  font-size: 3rem;
+	}
+
+	#scoreboard-container h3 {
+		font-size: var(--fs-xl);
+	}
+
+	#scoreboard-container h4 {
+		font-size: var(--fs-lg);
+		margin-top: 1rem;
+	}
+
+	/* Scoreboard Chart Styling */
+	#chart-score-container span {
+	  margin-right: 0.75rem;
+		font-size: var(--fs-lg);
+	}
+
+	#chart-score-container p {
+		font-size: var(--fs-lg);
+		margin-right: 0.1rem;
+	}
+
+	#chart-one,
+	#chart-two,
+	#chart-three,
+	#chart-four,
+	#chart-five,
+	#chart-six {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: flex-start;
+		align-items: center;
+	  margin: 0.5rem;
+	}
+
+	#bar-chart-1,
+	#bar-chart-2,
+	#bar-chart-3,
+	#bar-chart-4,
+	#bar-chart-5,
+	#bar-chart-6 {
+	  padding: 0.25rem 0.5rem;
+	}
+
+	/* Styling for clock & share container */
+	#clock-share-container {
+		width: 90%;
+		margin-top: 1rem;
+	}
+
+
+	/* Share Button Styling */
+	#share-container {
+		width: 50%;
+		padding: 1rem 0rem;
+	}
+
+	#share-container button {
+		font-size: var(--fs-xl);
+		width: 85%;
+		padding: 1rem 1rem;
+		margin: 0 0 0 2rem;
+	  border-radius: 0.5rem;
+	}
+
+	/* Share Button Styling */
+	#play-again-container {
+		width: 50%;
+		padding: 1rem 0rem;
+	}
+
+	#play-again-container button {
+		font-size: var(--fs-xl);
+		width: 85%;
+		padding: 1rem 1rem;
+		margin: 0 2rem 0 0;
+	  border-radius: 0.5rem;
+	}
+
+
+
+	/* Settings Styling */
+	#settings-container {
+		min-height: 100%;
+		max-height: 100%;
+	}
+
+	#settings-inner-container {
+		width: 65%;
+		border-radius: 1rem;
+	}
+
+	#close-settings-button {
+		right: 1rem;
+		top: 1rem;
+		height: 2rem;
+		width: 2rem;
+		margin: 0rem;
+	}
+
+	#settings-header,
+	#settings-hard-mode,
+	#settings-dark-theme,
+	#settings-high-contrast,
+	#settings-feedback,
+	#settings-community,
+	#settings-questions,
+	#settings-footer {
+	  padding: 1.5rem 0rem;
+	}
+
+	#settings-header {
+		padding-top: 0;
+	}
+
+	.settings-extra-text span {
+	  margin-bottom: 0.5rem;
+	}
+
+	/* Settings Switch/Checkbox */
+	.settings-switch {
+		width: 3.5rem;
+		min-width: 3.5rem;
+		height: 2rem;
+		min-height: 2rem;
+	}
+
+	.settings-switch .toggler-slider {
+		border-radius: 1rem;
+	}
+
+	.settings-switch input[type="checkbox"]:checked+.toggler-slider .toggler-knob {
+		left: calc(100% - 1.6rem - 0.2rem);
+	}
+
+	.settings-switch .toggler-knob {
+		top: 0.2rem;
+		left: 0.2rem;
+		width: calc(2rem - 0.4rem);
+		height: calc(2rem - 0.4rem);
+	}
+
+	/* Settings text styling */
+	#settings-container h3 {
+		font-size: var(--fs-xl);
+		margin-top: 2rem;
+	}
+
+	#settings-container span {
+	  font-size: var(--fs-lg);
+	}
+
+	#settings-container p {
+	  color: var(--secondFontColor);
+	  font-size: var(--fs-md);
+	}
+
+	#settings-container a {
+	  font-size: 1.3rem;
+	}
+}

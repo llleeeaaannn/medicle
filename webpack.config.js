@@ -7,12 +7,21 @@ module.exports = {
     script: './src/script.js',
     game: './src/game.mjs',
     abbreviations: './src/abbreviations.mjs',
-    variables: './src/variables.mjs'
+    variables: './src/variables.mjs',
+    unlimitedScript: './src/uscript.js',
+    unlimitedGame: './src/ugame.mjs'
   },
   devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      filename: 'index.html',
+      template: 'src/index.html',
+      chunks: ['script', 'game', 'abbreviations', 'variables']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'unlimited.html',
+      template: 'src/unlimited.html',
+      chunks: ['unlimitedScript', 'unlimitedGame', 'abbreviations', 'variables']
     }),
   ],
   optimization: {
