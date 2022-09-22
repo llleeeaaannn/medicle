@@ -11,7 +11,6 @@ export default class Game {
   constructor() {
     this.abbreviation = abbreviationsObjects.random();
     this.wordle = this.abbreviation['abbreviation'];
-    console.log(this.wordle);
     this.definition = this.abbreviation['definition'];
     this.l = this.wordle.length;
     this.guesses = this.makeGuessesArray(this.l)
