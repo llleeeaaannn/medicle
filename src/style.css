@@ -577,6 +577,7 @@ svg {
 #settings-dark-theme,
 #settings-high-contrast,
 #settings-feedback,
+#settings-game-mode,
 #settings-community,
 #settings-questions,
 #settings-footer {
@@ -1085,6 +1086,7 @@ html {
 	#settings-hard-mode,
 	#settings-dark-theme,
 	#settings-high-contrast,
+	#settings-game-mode,
 	#settings-feedback,
 	#settings-community,
 	#settings-questions,
@@ -1489,6 +1491,7 @@ html {
 	#settings-hard-mode,
 	#settings-dark-theme,
 	#settings-high-contrast,
+	#settings-game-mode,
 	#settings-feedback,
 	#settings-community,
 	#settings-questions,
