@@ -6,7 +6,32 @@ const validAnswers = [
   { abbreviation: 'ADHD', definition: 'Attention deficit hyperactivity disorder' },
   { abbreviation: 'COLD', definition: 'Chronic obstructive lung disease' },
   { abbreviation: 'DEXA', definition: 'Dual energy x-ray absortiometry' },
-  { abbreviation: 'EUA', definition: 'Examination under anaesthetic' }
+  { abbreviation: 'EUA', definition: 'Examination under anaesthetic' },
+  { abbreviation: 'CDAD', definition: 'Clostridium difficile associated disease' },
+  { abbreviation: 'CEA', definition: 'Carotid endarterectomy' },
+  { abbreviation: 'CEO', definition: 'Chief Executive Officer' },
+  { abbreviation: 'CFAM', definition: 'Cerebral function amplitude' },
+  { abbreviation: 'CFM', definition: 'Cerebral function monitoring' },
+  { abbreviation: 'CGA', definition: 'Contact guard assistance' },
+  { abbreviation: 'CHB', definition: 'Complete heart block' },
+  { abbreviation: 'CHD', definition: 'Coronary heart disease' },
+  { abbreviation: 'CHO', definition: 'Carbohydrate' },
+  { abbreviation: 'CIN', definition: 'Cervical intraepithelial neoplasia' },
+  { abbreviation: 'CJD', definition: 'Creutzfeldt-Jakob Disease' },
+  { abbreviation: 'CKMB', definition: 'Creatine kinase isoenzyme' },
+  { abbreviation: 'CLD', definition: 'Chronic lung disease' },
+  { abbreviation: 'CLL', definition: 'Chronic lymphocytic leukaemia' },
+  { abbreviation: 'CLO', definition: 'Campbylobacter like organism' },
+  { abbreviation: 'CMCJ', definition: 'Carpal metacarpal joint' },
+  { abbreviation: 'CML', definition: 'Chronic myeloid leukaemia' },
+  { abbreviation: 'CMP', definition: 'Chondromalacia pattellae' },
+  { abbreviation: 'CMV', definition: 'Cytomegalovirus' },
+  { abbreviation: 'CNS', definition: 'Central nervous system' },
+  { abbreviation: 'COA', definition: 'Coarctation of the Aorta' },
+  { abbreviation: 'COD', definition: 'Change of dressing' },
+  { abbreviation: 'COLD', definition: 'Chronic obstructive lung disease' },
+  { abbreviation: 'COPD', definition: 'Chronic obstructive pulmonary disease' },
+  { abbreviation: 'CORS', definition: 'Coronary Angiogram' }
 ]
 
 const validAbbreviations = [
