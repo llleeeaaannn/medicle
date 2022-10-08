@@ -695,7 +695,7 @@ const validAbbreviations = [
   "TTN",
   "TTWB",
   "TUAG",
-  "TURB",
+  "TURP",
   "TVI",
   "TVS",
   "UAC",
