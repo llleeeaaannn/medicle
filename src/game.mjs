@@ -28,6 +28,8 @@ export default class Game {
 
   // Call functions to start game
   play() {
+    console.log(this.wordle);
+    console.log(this.day);
     this.createUI();
     this.addListeners();
     this.loadLocalStorage();
