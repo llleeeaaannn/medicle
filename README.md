@@ -38,7 +38,7 @@ Alongside the well known features of Wordle, Medicle provides the following addi
 
 
 ## Screenshots
-![Medicle UI](./img/medicle1.png)
+![Medicle UI](./img/Medicle1.png)
 
 
 
