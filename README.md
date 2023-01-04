@@ -38,8 +38,8 @@ Alongside the well known features of Wordle, Medicle provides the following addi
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+![Medicle UI](./img/medicle1.png)
+
 
 
 ## Usage
