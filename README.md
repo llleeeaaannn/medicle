@@ -32,10 +32,12 @@
 
 
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+Alongside the well known features of Wordle, Medicle provides the following additional features:
+- A dynamic user interface and game logic which adapts the number of guess squares depending on the acronym of the day.
+- An 'Unlimited Mode' which allows users to infinitely play rather than being restricted to the single daily acronym.
+- Dark and Light Mode alongside a High Contrast Mode for those with visual impairments.
+- A feature which displays the definition of the guessed acronym after each guess.
+- Statistic tracking stored in the brower's local storage allowing tracking of their scores without necessitating a cumbersome login which could negatively influence user adoption.
 
 
 ## Screenshots
@@ -43,46 +45,19 @@ List the ready features here:
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 
-## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
-
-
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
-
-
-## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+The application is available at [Medicle.net](https://www.medicle.net).
 
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
-Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
-
 To do:
-- Feature to be added 1
-- Feature to be added 2
+- Transform the application into an offline-first Progressive Web App as set out [here](https://web.dev/progressive-web-apps)
+- Add more in depth statisitcs tracking
 
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+Josh Wardle, creator of Worlde.
 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
-
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
+Created by [Frank Pierce](https://www.frankpierce.me/) - feel free to contact me!
