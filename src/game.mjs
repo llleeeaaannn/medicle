@@ -8,8 +8,10 @@ export default class Game {
 
   constructor() {
     this.day = this.wordleNumber();
-    this.wordle = validAnswers[this.day]['abbreviation'];
-    this.definition = validAnswers[this.day]['definition'];
+    // this.wordle = validAnswers[this.day]['abbreviation'];
+    // this.definition = validAnswers[this.day]['definition'];
+    this.wordle = 'BMI';
+    this.definition = 'Body Mass Index';
     this.l = this.wordle.length;
     this.guesses = this.makeGuessesArray(this.l)
     this.gameWon = false;
